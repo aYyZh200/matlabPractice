@@ -12,11 +12,13 @@ else
     return;
 end
 y1(1:n) = t ;
-for (i=1:n-1)
-    for(j=i+1:n)
+
+for i=1:n-1
+    for j=i+1:n
         y1(j) = y(j)*(t-x(i))/(x(j)-x(i))+y(i)*(t-x(j))/(x(i)-x(j));
     end
  f = y1(n) ;
  simplify(y1);
 end
+
  f0 = subs(y1(n), 't', x0);         
